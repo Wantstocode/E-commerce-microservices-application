@@ -1,0 +1,17 @@
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://discovery-server:${server.port}/eureka/
+#      defaultZone: http://localhost:${server.port}/eureka/
+
+
+  # Actuator Prometheus Endpoint
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: prometheus
