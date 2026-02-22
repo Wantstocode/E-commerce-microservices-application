@@ -1,21 +1,123 @@
-This microservices project comprises Customer, Product, Order, Notification, and Payment services, utilizing an event-driven architecture to ensure seamless communication and integration between components.
-<br>
-<br>
--> Each service has its own database, ensuring data isolation and scalability.<br>
--> Leveraged Kafka for event-driven communication, Eureka server for service registration, and API Gateway with   Keycloak for security.<br>
--> Dockerized the entire application for seamless deployment and coordination of services.<br>
--> Integrated Prometheus and Grafana for comprehensive monitoring and observability of the system.
 
+# ⚡ Microservices E-Commerce System
 
-## How to run the application using Docker
+A production-style **event-driven microservices architecture** built using Spring Boot and modern cloud-native technologies.
 
-1. Run `mvn clean package -DskipTests` to build the applications and create the docker image locally.
-2. Run `docker-compose up -d` to start the applications.
+This system is composed of the following independent services:
 
-## How to run the application without Docker
+- 🧑 Customer Service  
+- 📦 Product Service  
+- 🛒 Order Service  
+- 💳 Payment Service  
+- 📩 Notification Service  
 
-1. Run `mvn clean verify -DskipTests` by going inside each folder to build the applications.
-2. After that run `mvn spring-boot:run` by going inside each folder to start the applications.
+Each service is independently deployable and follows the **database-per-service pattern**, ensuring loose coupling, scalability, and data isolation.
 
+---
 
+## 🏗️ Architecture Overview
 
+This project demonstrates real-world distributed system design patterns:
+
+- 🔁 **Event-Driven Communication** using Apache Kafka  
+- 🔍 **Service Discovery** via Eureka Server  
+- 🌐 **API Gateway Pattern** for centralized routing  
+- 🔐 **Authentication & Authorization** using Keycloak  
+- 🐳 **Containerized Deployment** with Docker & Docker Compose  
+- 📊 **Monitoring & Observability** using Prometheus & Grafana  
+
+The system is designed with scalability, resilience, and production-readiness in mind.
+
+---
+
+## 🧩 Tech Stack
+
+**Backend**
+- Java
+- Spring Boot
+- Spring Cloud
+- Apache Kafka
+
+**Infrastructure**
+- Eureka Server
+- API Gateway
+- Keycloak
+- Docker & Docker Compose
+
+**Monitoring**
+- Prometheus
+- Grafana
+
+---
+
+## 🚀 Running the Application (Docker – Recommended)
+
+### 1️⃣ Build All Services
+
+```bash
+mvn clean package -DskipTests
+````
+
+### 2️⃣ Start the Entire System
+
+```bash
+docker-compose up -d
+```
+
+All services, infrastructure components, and monitoring tools will start automatically.
+
+---
+
+## 💻 Running Without Docker
+
+### 1️⃣ Build Each Service
+
+Navigate into each service directory and run:
+
+```bash
+mvn clean verify -DskipTests
+```
+
+### 2️⃣ Start Services Individually
+
+```bash
+mvn spring-boot:run
+```
+
+### ⚠ Recommended Startup Order
+
+1. Eureka Server
+2. Keycloak
+3. API Gateway
+4. Core Services (Customer, Product, Order, Payment, Notification)
+
+---
+
+## 📊 Observability & Monitoring
+
+* Prometheus collects metrics from services.
+* Grafana provides visualization dashboards.
+* Enables real-time monitoring of service health and system performance.
+
+---
+
+## 🎯 Engineering Concepts Demonstrated
+
+* Microservices Architecture
+* Event-Driven Systems
+* Service Discovery Pattern
+* API Gateway Pattern
+* Centralized Authentication & Authorization
+* Containerized Deployment
+* Production Monitoring & Observability
+* Distributed System Communication
+
+---
+
+## 📌 Key Highlights
+
+✔ Independent database per service
+✔ Loose coupling via Kafka events
+✔ Centralized security with Keycloak
+✔ Fully containerized environment
+✔ Real-world scalable architecture
